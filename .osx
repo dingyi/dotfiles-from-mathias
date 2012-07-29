@@ -4,44 +4,44 @@
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-scutil --set ComputerName "MathBook Pro"
-scutil --set HostName "MathBook Pro"
-scutil --set LocalHostName "MathBook-Pro"
+# 设置电脑名称 (via System Preferences → Sharing)
+scutil --set ComputerName "Yi Ding"
+scutil --set HostName "Yi Ding"
+scutil --set LocalHostName "Yi Ding"
 
-# Menu bar: disable transparency
+# Menu bar: 禁用透明度
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
-# Menu bar: show remaining battery time (on pre-10.8); hide percentage
+# Menu bar: 显示剩余电量; 隐藏百分比
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
-# Menu bar: hide the useless Time Machine and Volume icons
+# Menu bar: 隐藏没用的Time Machine和硬盘图标
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-# Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# 总是显示滚动条
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
-# Disable opening and closing window animations
+# 禁用窗口的打开和关闭动画效果
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-# Increase window resize speed for Cocoa applications
+# 增加窗口缩放时的速度
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
-# Expand save panel by default
+# 默认展开保存窗口对话框
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-# Expand print panel by default
+# 默认展开打印窗口对话框
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
-# Disable the “Are you sure you want to open this application?” dialog
+# 禁用“你确定要打开此应用吗?”对话框
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
 defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 
-# Disable Resume system-wide
+# 禁用系统全局Resume
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Disable automatic termination of inactive apps
@@ -71,8 +71,8 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
-# Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# 禁用自然式(Lion-style)滚动效果，慎用！
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -87,15 +87,15 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-# Set language and text formats
+# 设置语言和文本格式
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
+defaults write NSGlobalDomain AppleLanguages -array "zh_CN" "en"
+# defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# Disable auto-correct
+# 禁用自动纠正功能
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
@@ -106,13 +106,13 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to the desktop
+# 保存截图到桌面
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+# 保存截图为PNG格式(其他选项: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Disable shadow in screenshots
+# 禁用截图阴影
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
@@ -122,7 +122,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 # Finder                                                                      #
 ###############################################################################
 
-# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+# Finder: 允许用 ⌘ + Q 关闭(可以用来隐藏桌面图标)
 defaults write com.apple.finder QuitMenuItem -bool true
 
 # Finder: disable window animations and Get Info animations
@@ -134,25 +134,25 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Finder: show hidden files by default
+# Finder: 默认显示隐藏文件
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 
-# Finder: show all filename extensions
+# Finder: 显示所有文件扩展名
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Finder: show status bar
+# Finder: 显示状态栏
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Finder: allow text selection in Quick Look
+# Finder: 开启在Quick Look中选中文本
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Display full POSIX path as Finder window title
+# 在标题栏显示完整POSIX路径
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-# Disable the warning when changing a file extension
+# 当修改文件扩展名时关闭警告
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Avoid creating .DS_Store files on network volumes
+# 禁止在网络设备上创建.DS_Store文件
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Disable disk image verification
@@ -185,19 +185,19 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
-# Disable the warning before emptying the Trash
+# 当清空废纸篓时关闭警告
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Empty Trash securely by default
+# 默认安全清倒废纸篓
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
-# Enable AirDrop over Ethernet and on unsupported Macs running Lion
+# 开启AirDrop对局域网和不支持AirDrop的Mac的支持
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
-# Show the ~/Library folder
+# 显示资料库
 chflags nohidden ~/Library
 
-# Remove Dropbox’s green checkmark icons in Finder
+# 去掉Dropbox的绿色对勾图标
 file=/Applications/Dropbox.app/Contents/Resources/check.icns
 [ -e "$file" ] && mv -f "$file" "$file.bak"
 unset file
@@ -209,7 +209,7 @@ unset file
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilte-stack -bool true
 
-# Set the icon size of Dock items to 36 pixels
+# 设定Dock图标大小为36
 defaults write com.apple.dock tilesize -int 36
 
 # Enable spring loading for all Dock items
@@ -221,13 +221,13 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
-# Speed up Mission Control animations
+# 加速Mission Control动画显示
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-# Group windows by application in Mission Control
+# 在Mission Control给窗口分组
 defaults write com.apple.dock "expose-group-by-app" -bool true
 
-# Don’t show Dashboard as a Space
+# 禁止显示Dahboard为Space
 defaults write com.apple.dock "dashboard-in-overlay" -bool true
 
 # Remove the auto-hiding Dock delay
@@ -235,16 +235,16 @@ defaults write com.apple.Dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
-# Enable the 2D Dock
+# 开启2D Dock
 #defaults write com.apple.dock no-glass -bool true
 
-# Automatically hide and show the Dock
+# 自动显示和隐藏Dock
 defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-# Enable iTunes track notifications in the Dock
+# 开启iTunes track notifications in the Dock
 defaults write com.apple.dock itunes-notifications -bool true
 
 # Reset Launchpad
@@ -256,13 +256,13 @@ find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Hot corners
-# Top left screen corner → Mission Control
+# 左上角 → Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Desktop
+# 右上角 → 桌面
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
+# 左下角 → 屏幕保护
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
@@ -270,22 +270,22 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Safari & WebKit                                                             #
 ###############################################################################
 
-# Hide Safari’s bookmarks bar by default
-defaults write com.apple.Safari ShowFavoritesBar -bool false
+# 默认隐藏Safari书签
+# defaults write com.apple.Safari ShowFavoritesBar -bool false
 
-# Disable Safari’s thumbnail cache for History and Top Sites
+# 禁止Safari上历史和Top Sites的缩略图缓存
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
-# Enable Safari’s debug menu
+# 开启Safari的debug菜单
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Make Safari’s search banners default to Contains instead of Starts With
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
-# Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+# 去掉Safari上没用的图标，如Reading List，Top Sites，慎用！
+# defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
-# Enable the Develop menu and the Web Inspector in Safari
+# 开启Safari的开发和Web检查器
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
@@ -297,48 +297,48 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Address Book, Dashboard, iCal, iTunes, Mail, and Disk Utility               #
 ###############################################################################
 
-# Enable the debug menu in Address Book
+# 开启Address Book的debug菜单
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
-# Enable Dashboard dev mode (allows keeping widgets on the desktop)
+# 开启Dashboard的开放模式(允许widgets停留在桌面上)
 defaults write com.apple.dashboard devmode -bool true
 
-# Enable the debug menu in iCal
+# 开启iCal的debug菜单
 defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Make the iTunes arrow links go to your library instead of the iTunes Store
 defaults write com.apple.iTunes invertStoreLinks -bool true
 
-# Disable the iTunes arrow links completely
+# 禁止iTunes显示链接
 defaults write com.apple.iTunes show-store-arrow-links -bool false
 
-# Disable the Ping sidebar in iTunes
+# 禁止iTunes在侧边栏显示Ping
 defaults write com.apple.iTunes disablePingSidebar -bool true
 
-# Disable all the other Ping stuff in iTunes
+# 禁止iTunes显示其他所有Ping的内容
 defaults write com.apple.iTunes disablePing -bool true
 
-# Make ⌘ + F focus the search input in iTunes
+# 让 ⌘ + F 在iTunes跳到搜索栏
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
-# Disable send and reply animations in Mail.app
+# 禁止在Mail.app显示发送和回复的动画效果
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
-# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+# 在Mail.app里，修改拷贝邮件地址的格式为 `foo@example.com` 而非默认的 `Foo Bar <foo@example.com>`
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
-# Enable the debug menu in Disk Utility
+# 开启Disk Utility的debug菜单
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 
 ###############################################################################
 # Terminal                                                                    #
 ###############################################################################
 
-# Only use UTF-8 in Terminal.app
+# 只在Terminal.app里使用UTF-8
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use the Pro theme by default in Terminal.app
+# 使用Pro theme作为默认主题
 defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 
